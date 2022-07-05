@@ -65,11 +65,11 @@ $voters = [
 ];
 
 $information = new stdClass();
-$information->numYoungVotes = array_filter($voters, 'checkYoungVotes');
-$information->numYoungPeople = array_filter($voters, 'checkYoung');
-$information->numMidVotesPeople = array_filter($voters, 'checkMidVotes');
-$information->numMidsPeople = array_filter($voters, 'checkMid');
-$information->numOldVotesPeople = array_filter($voters, 'checkOldVotes');
-$information->numOldsPeople = array_filter($voters, 'checkOld');
+$information->numYoungVotes = count(array_filter($voters, 'checkYoungVotes'));
+$information->numYoungPeople = count(array_filter($voters, 'checkYoung'));
+$information->numMidVotesPeople = count(array_filter($voters, 'checkMidVotes'));
+$information->numMidsPeople = count(array_filter($voters, 'checkMid'));
+$information->numOldVotesPeople = count(array_filter($voters, 'checkOldVotes'));
+$information->numOldsPeople = count(array_filter($voters, 'checkOld'));
 
 print_r($information);
